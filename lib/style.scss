@@ -1,0 +1,62 @@
+:global {
+    .DraftEditor-root {
+        height: 100%;
+        min-height: 250px;
+        border: 1px solid #e9e9e9;
+        margin: 10px;
+    }
+    .nna-blockquote {
+        border-left: 5px solid #eee;
+        color: #666;
+        font-style: italic;
+        margin: 16px 0;
+        padding: 10px 20px;
+    }
+    .nna-button {
+        .ant-btn {
+            border: none;
+            margin: 2px;
+            &[disabled] {
+                background-color: transparent;
+            }
+        }
+    }
+    .public-DraftStyleDefault-pre {
+        background-color: rgba(0, 0, 0, 0.05);
+        font-family: 'Inconsolata', 'Menlo', 'Consolas', monospace;
+        font-size: 16px;
+        padding: 20px;
+    }
+    .nna-center-aligned-block,
+    .nna-left-aligned-block,
+    .nna-right-aligned-block,
+    .nna-default-aligned-block {
+        &>div {
+            display: inline;
+        }
+    }
+    .nna-center-aligned-block {
+        text-align: center;
+    }
+    .nna-left-aligned-block {
+        text-align: left;
+    }
+    .nna-right-aligned-block {
+        text-align: right;
+    }
+    .nna-default-aligned-block {
+        text-align: justify;
+    }
+}
+
+.nna-editor {
+    position: relative;
+    padding-top: 30px;
+    .nna-editor-toolbar {
+        position: absolute;
+        width: 100%;
+        top: 10px;
+        border-bottom: 2px solid #e9e9e9;
+    }
+    .nna-editor-main {}
+}
