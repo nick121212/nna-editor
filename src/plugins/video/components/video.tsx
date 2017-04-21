@@ -52,11 +52,12 @@ const getSrc = (src) => {
 export const Video = (props) => {
     const { blockProps, style, contentState, entityKey } = props;
     const { src } = contentState.getEntity(entityKey).getData();
-
+    const video = getSrc(src);
+    
     return (
         <div style={style} >
             <div style={iframeContainer} >
-                {getSrc(src)}
+                {video}
             </div>
         </div>
     );

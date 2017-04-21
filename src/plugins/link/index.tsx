@@ -33,11 +33,11 @@ const Link = (props) => {
         ...otherProps
     } = props;
 
-    let href = entityKey ? contentState.getEntity(entityKey).getData() : decoratedText;
+    let data = entityKey ? contentState.getEntity(entityKey).getData() : { url: decoratedText };
 
     const newProps = {
         ...otherProps,
-        href,
+        href: data.url,
         target
     };
 
@@ -63,17 +63,17 @@ export default (Component, config = {}) => {
 
     return {
         handlePastedText: (text, html, { getEditorState, setEditorState }) => {
-            const links = linkify.match(text);
+            // const links = linkify.match(text);
 
-            if (typeof links !== 'undefined' && links !== null) {
-                for (let i = 0; i < links.length; i += 1) {
-                    let link = links[i];
+            // if (typeof links !== 'undefined' && links !== null) {
+            //     for (let i = 0; i < links.length; i += 1) {
+            //         let link = links[i];
 
-                    toggleLink(store, { link: link.url, title: link.text, start: link.index, end: link.lastIndex });
-                }
+            //         toggleLink(store, { link: link.url, title: link.text, start: link.index, end: link.lastIndex });
+            //     }
 
-                return true;
-            }
+            //     return true;
+            // }
 
             return false;
         },

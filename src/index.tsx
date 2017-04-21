@@ -10,7 +10,7 @@ export interface IProps {
     pluginComponents: Array<JSX.Element>;
     getToolbar: () => Array<JSX.Element>;
     contentState: ContentState;
-    onChangeEditorState?:(editorState:EditorState)=>void;
+    onChangeEditorState?: (editorState: EditorState) => void;
 }
 
 export class NnaEditor extends React.Component<IProps, any>{
@@ -35,6 +35,9 @@ export class NnaEditor extends React.Component<IProps, any>{
     onChange(editorState) {
         setTimeout(() => {
             this.setState({ editorState })
+            if (this.props.onChangeEditorState) {
+                this.props.onChangeEditorState(editorState)
+            }
         }, 10);
     }
 
